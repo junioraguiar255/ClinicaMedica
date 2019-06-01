@@ -2,7 +2,11 @@ package clinica.conexao;
 
 public class FabricaDeConexao {
 
-	public static BancoDeDados getDatabase(String nome) {
+	public FabricaDeConexao() {
+
+	}
+
+	public BancoDeDados getDatabase(String nome) {
 		if (nome.equals("postgresql")) {
 			return new BancoPostgres();
 		} else if (nome.equals("mysql")) {

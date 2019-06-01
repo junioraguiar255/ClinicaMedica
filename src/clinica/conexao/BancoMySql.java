@@ -15,10 +15,11 @@ public class BancoMySql implements BancoDeDados {
     public Connection conectar() {
         try {
             Class.forName("com.mysql.jdbc.Driver");
-            this.connection = DriverManager.getConnection("jdbc:mysql://127.0.0.1/javafxmvc", "postgres","postgres");
+            this.connection = DriverManager.getConnection("jdbc:mysql://127.0.0.1/Clinica", "postgres","postgres");
             return this.connection;
         } catch (SQLException | ClassNotFoundException ex) {
             Logger.getLogger(BancoMySql.class.getName()).log(Level.SEVERE, null, ex);
+            System.out.println("Error"+ex.getMessage());
             return null;
         }
     }
